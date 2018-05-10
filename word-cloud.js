@@ -1,6 +1,6 @@
 var fill = d3.scale.category20b();
 
-var w = window.innerWidth,
+var w = 900,
     h = 200;
 
 var max,
@@ -22,7 +22,7 @@ var svg = d3.select("#vis").append("svg")
     .attr("height", h);
 
 var vis = svg.append("g").attr("transform", "translate(" + [w >> 1, h >> 1] + ")");
-
+26
 update();
 
 if (window.attachEvent) {
@@ -82,10 +82,29 @@ function draw(data, bounds) {
 }
 
 function update() {
-    layout.font('impact').spiral('archimedean');
-    fontSize = d3.scale['sqrt']().range([10, 100]);
-    if (tags.length) {
-        fontSize.domain([+tags[tags.length - 1].value || 1, +tags[0].value]);
-    }
-    layout.stop().words(tags).start();
+
+    var tags;
+
+    $.ajax({
+        url: 'http://localhost:5000/keywordextraction',
+        type: 'post',
+        contentType: 'application/json',
+        data: JSON.stringify({"data": "Dummy data"}),
+        success: function (data) {
+            console.log(data);
+            tags = data;
+            console.log(JSON.stringify(tags));
+
+            layout.font('impact').spiral('archimedean');
+            fontSize = d3.scale['sqrt']().range([1, 100]);
+            if (tags.length) {
+                fontSize.domain([+tags[tags.length - 1].value || 1, +tags[0].value]);
+            }
+            layout.stop().words(tags).start();
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+            alert("Request Failed");
+        }
+    });
+
 }

@@ -586,4 +586,18 @@ $(document).ready(function () {
         }
 
     });
+
+
+    $.ajax({
+        url: 'http://localhost:5000/mindmap',
+        type: 'post',
+        contentType: 'application/json',
+        data: JSON.stringify({"data": $('#source-text').val()}),
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+            alert("Request Failed");
+        }
+    });
 });
