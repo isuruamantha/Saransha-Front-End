@@ -1,6 +1,5 @@
 function init() {
 
-    console.log("first step")
     if (window.goSamples) goSamples();
     var $ = go.GraphObject.make;
 
@@ -310,22 +309,26 @@ function save() {
 
 function load() {
 
-    console.log("working")
-    $.ajax({
-        url: 'http://localhost:5000/mindmap',
-        type: 'post',
-        contentType: 'application/json',
-        data: JSON.stringify({"data": "Dummy data"}),
-        success: function (data) {
-            console.log(data);
-            myDiagram.model = go.Model.fromJson(data);
-        },
-        error: function (jqXhr, textStatus, errorThrown) {
-            alert("Request Failed");
-        }
-    });
+    if ($('#source-text').val() == "") {
+        alert("Field is empty!")
+    } else {
+        $.ajax({
+            url: 'http://localhost:5000/mindmap',
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({"data": $('#source-text').val()}),
+            success: function (data) {
+                console.log(data);
+                myDiagram.model = go.Model.fromJson(data);
+                layoutAll();
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                alert("Request Failed");
+            }
+        });
+
+        // myDiagram.model = go.Model.fromJson(document.getElementById("mySavedModel").value);
+    }
 
 
-    // myDiagram.model = go.Model.fromJson(document.getElementById("mySavedModel").value);
-    console.log(go.Model.fromJson(document.getElementById("mySavedModel")))
 }

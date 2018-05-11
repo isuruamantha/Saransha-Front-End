@@ -10,7 +10,7 @@
 <script src="summarization.js"></script>
 <script type="text/javascript" src="bower_components/d3/d3.js"></script>
 <script type="text/javascript" src="bower_components/d3-cloud/d3.layout.cloud.js"></script>
-<body onload="init()">
+<body>
 <script src="mindmap.js"></script>
 <div class="container">
     <div class="panel panel-default" style="margin-top: 20px;">
@@ -21,6 +21,7 @@
                     <textarea class="form-control" name="data" rows="5" id="source-text"></textarea>
                 </div>
                 <button type="button" value="submit" name="submit" class="btn btn-primary btn pull-right"
+                        onclick="init();update()"
                         id="create-mindmap">Process
                 </button>
             </form>
