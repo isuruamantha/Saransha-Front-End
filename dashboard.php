@@ -8,8 +8,10 @@
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="assets/go.js"></script>
 <script src="summarization.js"></script>
+<script src="dashboard.js"></script>
 <script type="text/javascript" src="bower_components/d3/d3.js"></script>
 <script type="text/javascript" src="bower_components/d3-cloud/d3.layout.cloud.js"></script>
+<link rel="stylesheet" href="dashboard.css">
 <body>
 <script src="mindmap.js"></script>
 <div class="container">
@@ -20,9 +22,43 @@
                 <div class="form-group">
                     <textarea class="form-control" name="data" rows="5" id="source-text"></textarea>
                 </div>
+
+                Number of lines in the summary
+                <div class="center-plus-minus"><p></p>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-number" disabled="disabled"
+                                    data-type="minus" data-field="quant[1]">
+                          <span class="glyphicon glyphicon-minus"></span></button></span>
+                        <input type="text" name="quant[1]" id="line-count" class="form-control input-number" value="5"
+                               min="1" max="10">
+                        <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                          <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                  </span></div>
+                </div>
+                <br>
+
+                Number of keywords in the word cloud
+                <div class="center-plus-minus"><p></p>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-number" disabled="disabled"
+                                    data-type="minus" data-field="quant[2]">
+                          <span class="glyphicon glyphicon-minus"></span></button></span>
+                        <input type="text" name="quant[2]" id="keyword-count" class="form-control input-number" value="20"
+                               min="1" max="30">
+                        <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]">
+                          <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                  </span></div>
+                </div>
+
+
                 <button type="button" value="submit" name="submit" class="btn btn-primary btn pull-right"
-                        onclick="init();update()"
-                        id="create-mindmap">Process
+                        onclick="init();update()" id="create-mindmap">Process
                 </button>
             </form>
         </div>

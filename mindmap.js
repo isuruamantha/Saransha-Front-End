@@ -316,14 +316,18 @@ function load() {
             url: 'http://localhost:5000/mindmap',
             type: 'post',
             contentType: 'application/json',
-            data: JSON.stringify({"data": $('#source-text').val()}),
+            data: JSON.stringify({
+                "data": $('#source-text').val(),
+                "sentences_count": $('#line-count').val(),
+                "keyword_count": $('#keyword-count').val()
+            }),
             success: function (data) {
                 console.log(data);
                 myDiagram.model = go.Model.fromJson(data);
                 layoutAll();
             },
             error: function (jqXhr, textStatus, errorThrown) {
-                alert("Request Failed");
+                alert("Request Failedd");
             }
         });
 
