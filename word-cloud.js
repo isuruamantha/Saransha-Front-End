@@ -1,6 +1,6 @@
 var fill = d3.scale.category20b();
 
-var w = 900,
+var w = 800,
     h = 200;
 
 var max,

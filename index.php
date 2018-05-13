@@ -1,60 +1,83 @@
 <!DOCTYPE html>
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <title>සාරාංශා - Sārānshā</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap-theme.css"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="Login/login.css">
+    <script src="Login/Login.js"></script>
 </head>
-
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="assets/go.js"></script>
-<script src="summarization.js"></script>
-<script type="text/javascript" src="bower_components/d3/d3.js"></script>
-<script type="text/javascript" src="bower_components/d3-cloud/d3.layout.cloud.js"></script>
 <body>
-<script src="mindmap.js"></script>
+
 <div class="container">
-    <div class="panel panel-default" style="margin-top: 20px;">
-        <div class="panel-heading">Enter your text Sinhala here</div>
-        <div class="panel-body">
-            <form action="" method="POST">
-                <div class="form-group">
-                    <textarea class="form-control" name="data" rows="5" id="source-text"></textarea>
-                </div>
-                <button type="button" value="submit" name="submit" class="btn btn-primary btn pull-right"
-                        onclick="init();update()"
-                        id="create-mindmap">Process
-                </button>
-            </form>
+    <div class="row">
+        <div class="pen-title">
+            <h1>සාරාංශා - Sārānshā</h1>
         </div>
-    </div>
-
-    <div class="panel panel-default" style="margin-top: 20px;">
-        <div class="panel-heading">Generated Sinhala Summary</div>
-        <div class="panel-body">
-            <form action="index.php"
-            " method="POST">
-            <div class="form-group">
-                <textarea class="form-control" name="data" rows="5" id="generated-text"></textarea>
+        <div class="container">
+            <div class="card"></div>
+            <div class="card">
+                <h1 class="title">Login</h1>
+                <form>
+                    <div class="input-container">
+                        <input type="text" id="login-username" required="required"/>
+                        <label for="login-username">Username</label>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="login-password" required="required"/>
+                        <label for="login-password">Password</label>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="button-container">
+                        <button id="login-button"><span>Login</span></button>
+                    </div>
+                </form>
             </div>
-            </form>
+            <div class="card alt">
+                <div class="toggle"></div>
+                <h1 class="title">Register
+                    <div class="close"></div>
+                </h1>
+                <form>
+                    <div class="input-container">
+                        <input type="text" id="register-username" required="required"/>
+
+                        <label for="register-username">Username</label>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="register-password" required="required"/>
+                        <label for="register-password">Password</label>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="register-email" required="required"/>
+                        <label for="register-email">Email</label>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="button-container">
+                        <button id="register-button"><span>Register</span></button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-
-    <div id="sample">
-        <div id="myDiagramDiv" style="border: solid 1px black; width:100%; height:300px;"></div>
-
-        <button id="SaveButton" onclick="save()">Save</button>
-        <button onclick="load()">Load</button>
-        <button onclick="layoutAll()">Layout</button>
-        <br/>
-    </div>
-
-
-    <div id="vis"></div>
-    <script type="text/javascript" src="word-cloud.js"></script>
-
-
-</body>
 </div>
 
+
+<script>
+    $(document).ready(function () {
+        $('.toggle').on('click', function () {
+            $('.container').stop().addClass('active');
+        });
+
+        $('.close').on('click', function () {
+            $('.container').stop().removeClass('active');
+        });
+
+    });
+</script>
+</body>
 </html>
