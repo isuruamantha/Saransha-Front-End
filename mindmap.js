@@ -20,11 +20,11 @@ function init() {
         var button = document.getElementById("SaveButton");
         if (button) button.disabled = !myDiagram.isModified;
         var idx = document.title.indexOf("*");
-        if (myDiagram.isModified) {
-            if (idx < 0) document.title += "*";
-        } else {
-            if (idx >= 0) document.title = document.title.substr(0, idx);
-        }
+        // if (myDiagram.isModified) {
+        //     if (idx < 0) document.title += "*";
+        // } else {
+        //     if (idx >= 0) document.title = document.title.substr(0, idx);
+        // }
     });
 
     // a node consists of some text with a line shape underneath
