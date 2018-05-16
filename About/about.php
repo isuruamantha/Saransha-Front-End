@@ -31,7 +31,7 @@
 
                     </div>
                     <div class="avatar">
-                        <img alt="" src="http://isuruamantha.me/img/profile.png">
+                        <img alt="" src="../assets/profile.png">
                     </div>
                     <div class="info">
                         <div class="title">

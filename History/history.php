@@ -18,6 +18,7 @@
     <a href="history.php">History</a>
     <a href="../About/about.php">About</a>
 </div>
++
 
 <div class="main">
     <div class="container">
@@ -26,38 +27,18 @@
                 <thead>
 
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Parent ID</th>
+                    <th>Created date</th>
+                    <th>Summary</th>
                     <th class="text-center">Action</th>
                 </tr>
                 </thead>
                 <tr>
-                    <td>1</td>
                     <td>News</td>
                     <td>News Cate</td>
                     <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span
-                                    class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
-                                                                                         class="btn btn-danger btn-xs"><span
-                                    class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                    class="glyphicon glyphicon-eye-open"></span> View</a></td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Products</td>
-                    <td>Main Products</td>
-                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span
-                                    class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
-                                                                                         class="btn btn-danger btn-xs"><span
-                                    class="glyphicon glyphicon-remove"></span> Del</a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Blogs</td>
-                    <td>Parent Blogs</td>
-                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span
-                                    class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
-                                                                                         class="btn btn-danger btn-xs"><span
-                                    class="glyphicon glyphicon-remove"></span> Del</a></td>
+
                 </tr>
             </table>
         </div>
