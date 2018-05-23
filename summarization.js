@@ -10,7 +10,6 @@ $(document).ready(function () {
         if (english.test(language)) {
             alert("Please Enter a Sinhala Paragraph")
         } else {
-
             // Request for summarizing
             $.ajax({
                 url: 'http://localhost:5000/summarizer',
@@ -23,7 +22,9 @@ $(document).ready(function () {
                 }),
                 success: function (data) {
                     console.log(data);
+                    // $('#generated-text').val("");
                     $('#generated-text').append(data)
+
                 },
                 error: function (jqXhr, textStatus, errorThrown) {
                     alert("Summarization Request Failed");

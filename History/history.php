@@ -9,21 +9,24 @@
 <link rel="stylesheet" href="history.css">
 <script src="../Dashboard/dashboard.js"></script>
 <link rel="stylesheet" href="../Dashboard/dashboard.css">
+<script src="History.js"></script>
 <body>
 
 <div class="sidenav">
 
-    <span><h3 style="color: white; margin-left: 12px">HI, Isuru</h3></span>
+    <span><h3 style="color: white; margin-left: 12px">HI, <span id="user-name"></span></h3></span>
+    <script>
+        document.getElementById('user-name').innerHTML = localStorage.getItem("userName")
+    </script>
     <a href="../Dashboard/dashboard.php">Dashboard</a>
-    <a href="history.php">History</a>
+    <a href="../History/history.php">History</a>
     <a href="../About/about.php">About</a>
 </div>
-+
 
 <div class="main">
     <div class="container">
-        <div class="row col-md-6 col-md-offset-2 custyle">
-            <table class="table table-striped custab">
+        <div class="row col-md-12 custyle">
+            <table class="table table-striped custab" id="history-table">
                 <thead>
 
                 <tr>
@@ -32,14 +35,7 @@
                     <th class="text-center">Action</th>
                 </tr>
                 </thead>
-                <tr>
-                    <td>News</td>
-                    <td>News Cate</td>
-                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span
-                                    class="glyphicon glyphicon-eye-open"></span> View</a></td>
-                </tr>
 
-                </tr>
             </table>
         </div>
     </div>

@@ -14,10 +14,13 @@
 
 <div class="sidenav">
 
-    <span><h3 style="color: white; margin-left: 12px">HI, Isuru</h3></span>
+    <span><h3 style="color: white; margin-left: 12px">HI, <span id="user-name"></span></h3></span>
+    <script>
+        document.getElementById('user-name').innerHTML = localStorage.getItem("userName")
+    </script>
     <a href="../Dashboard/dashboard.php">Dashboard</a>
     <a href="../History/history.php">History</a>
-    <a href="about.php">About</a>
+    <a href="../About/about.php">About</a>
 </div>
 
 <div class="main">

@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    $("#login-button").click(function () {
-
+    $("#login-button").click(function (event) {
+        event.preventDefault();
         if ($('#login-username').val() == "" || $('#login-password').val() == "") {
             alert("Please fill the required fields")
         } else {
@@ -14,12 +14,19 @@ $(document).ready(function () {
 
                 }),
                 success: function (data) {
-                    localStorage.setItem("isValidSession", true);
-                    alert(data);
-                    window.location.href = 'dashboard.php';
+                    console.log(data[0]);
+                    if (data[0] == "fail") {
+                        alert("Login Unsuccessful !")
+                    } else {
+                        localStorage.setItem("isValidSession", true);
+                        localStorage.setItem("userName", data[1]);
+                        localStorage.setItem("userId", data[2]);
+                        window.location.href = 'Dashboard/dashboard.php';
+                    }
+
                 },
                 error: function (jqXhr, textStatus, errorThrown) {
-                    alert("Request Failed");
+                    alert("Login Unsuccessful");
                 }
             });
         }
@@ -27,7 +34,7 @@ $(document).ready(function () {
     });
 
     $("#register-button").click(function () {
-
+        event.preventDefault();
         if ($('#register-username').val() == "" || $('#register-password').val() == "" || $('#register-email').val() == "") {
             alert("Please fill the required fields")
         } else {
