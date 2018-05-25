@@ -22,12 +22,12 @@
                 <form>
                     <div class="input-container">
                         <input type="text" id="login-username" required="required"/>
-                        <label for="login-username">Username</label>
+                        <label for="login-username">පරිශීලක නාමය / Username</label>
                         <div class="bar"></div>
                     </div>
                     <div class="input-container">
                         <input type="password" id="login-password" required="required"/>
-                        <label for="login-password">Password</label>
+                        <label for="login-password">මුරපදය / Password</label>
                         <div class="bar"></div>
                     </div>
                     <div class="button-container">
@@ -44,17 +44,17 @@
                     <div class="input-container">
                         <input type="text" id="register-username" required="required"/>
 
-                        <label for="register-username">Username</label>
+                        <label for="register-username">පරිශීලක නාමය / Username</label>
                         <div class="bar"></div>
                     </div>
                     <div class="input-container">
                         <input type="password" id="register-password" required="required"/>
-                        <label for="register-password">Password</label>
+                        <label for="register-password">මුරපදය / Password</label>
                         <div class="bar"></div>
                     </div>
                     <div class="input-container">
                         <input type="text" id="register-email" required="required"/>
-                        <label for="register-email">Email</label>
+                        <label for="register-email">ඊමේලය / Email</label>
                         <div class="bar"></div>
                     </div>
                     <div class="button-container">

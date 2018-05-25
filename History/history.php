@@ -32,7 +32,6 @@
                 <tr>
                     <th>Created date</th>
                     <th>Summary</th>
-                    <th class="text-center">Action</th>
                 </tr>
                 </thead>
 

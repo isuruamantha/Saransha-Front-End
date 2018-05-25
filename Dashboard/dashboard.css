@@ -307,3 +307,15 @@ body {
     color: #fff; /* active text color */
     background-color: #a94442; /* active bg color */
 }
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: block;
+    height: 0;
+    overflow-y: hidden;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+    height: auto;
+}

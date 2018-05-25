@@ -13,7 +13,7 @@ $(document).ready(function () {
             // alert(JSON.stringify(data));
             for (i = 0; i < data.length; i++) {
                 document.getElementById('history-table').innerHTML +=
-                    '<tr><td>'+data[i]["created date"] +'</td><td>' + data[i]["value"] + '</td><td class="text-center"><a class="btn btn-info btn-xs" href="#"><span class="glyphicon glyphicon-eye-open"></span> View</a></td></tr></tr>';
+                    '<tr><td>'+data[i]["created date"] +'</td><td>' + data[i]["value"] + '</td></tr></tr>';
             }
         },
         error: function (jqXhr, textStatus, errorThrown) {

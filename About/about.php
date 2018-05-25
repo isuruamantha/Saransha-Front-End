@@ -21,13 +21,15 @@
     <a href="../Dashboard/dashboard.php">Dashboard</a>
     <a href="../History/history.php">History</a>
     <a href="../About/about.php">About</a>
+
+
 </div>
 
 <div class="main">
 
     <div class="container text-center">
         <div class="row">
-            <div class="col-lg-12 col-sm-6">
+            <div class="col-lg-12">
 
                 <div class="card hovercard">
                     <div class="cardheader">
