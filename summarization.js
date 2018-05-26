@@ -2,6 +2,7 @@
 $(document).ready(function () {
 
     $("#reset-button").click(function () {
+        $('#source-text').val('');
         location.reload();
     });
 

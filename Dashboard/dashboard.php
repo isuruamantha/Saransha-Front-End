@@ -39,11 +39,29 @@
 <div class="main">
     <div class="container">
         <div class="panel panel-default" style="margin-top: 20px;">
-            <div class="panel-heading">Enter your text Sinhala here</div>
+            <div class="panel-heading clearfix">Enter your text Sinhala here
+                <div class="pull-right">
+                    <form action="" method="post" enctype="multipart/form-data" id="isuru">
+                        <label style="display: inline-block" for="file">Upload file:</label> <input
+                                class="btn btn-primary btn"
+                                style="display: inline-block" type="file" name="file" id="file"/>
+                        <input class="btn btn-primary btn" style="display: inline-block" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
             <div class="panel-body">
                 <form action="" method="POST">
                     <div class="form-group">
-                        <textarea class="form-control" name="data" rows="5" id="source-text"></textarea>
+                        <textarea class="form-control" name="data" rows="5" id="source-text">
+                                            <?php
+                                            error_reporting(E_ERROR | E_PARSE);
+                                            $fp = fopen($_FILES['file']['tmp_name'], 'rb');
+                                            while (($line = fgets($fp)) !== false) {
+                                                echo "$line";
+                                            }
+                                            fclose($fp);
+                                            ?>
+                        </textarea>
                     </div>
                     Number of lines in the summary
                     <div class="center-plus-minus"><p></p>
@@ -81,7 +99,8 @@
                     <button type="button" value="submit" name="submit" class="btn btn-primary btn pull-right"
                             onclick="init();update()" id="create-mindmap">Process
                     </button>
-                    <button style="margin-right: 10px" value="submit" type="button" class="btn btn-primary btn pull-right"
+                    <button style="margin-right: 10px" value="submit" type="button"
+                            class="btn btn-primary btn pull-right"
                             id="reset-button">Reset
                     </button>
                 </form>
