@@ -10,17 +10,29 @@
 <link rel="stylesheet" href="about.css">
 <script src="../Dashboard/dashboard.js"></script>
 <link rel="stylesheet" href="../Dashboard/dashboard.css">
+<script src="https://unpkg.com/i18next/i18next.js"></script>
 <body>
 
 <div class="sidenav">
 
-    <span><h3 style="color: white; margin-left: 12px">HI, <span id="user-name"></span></h3></span>
+    <div class="text-center">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary"
+                    onclick="i18next.changeLanguage('en'); changeAppLanguage('en')"><img
+                        src="../assets/uk_flak.jpg" width="26"/></button>
+            <button type="button" class="btn btn-primary"
+                    onclick="i18next.changeLanguage('de'); changeAppLanguage('de')"><img
+                        src="../assets/sri_lanka_flag.png" width="40"/></button>
+        </div>
+    </div>
+
+    <span><h3 style="color: white; margin-left: 12px"><span id="localization-hi">HI</span>, <span id="user-name"></span></h3></span>
     <script>
         document.getElementById('user-name').innerHTML = localStorage.getItem("userName")
     </script>
-    <a href="../Dashboard/dashboard.php">Dashboard</a>
-    <a href="../History/history.php">History</a>
-    <a href="../About/about.php">About</a>
+    <a href="../Dashboard/dashboard.php"><span id="localization-dasbhoard">Dashboard</span></a>
+    <a href="../History/history.php"><span id="localization-history">History</span></a>
+    <a href="../About/about.php"><span id="localization-about">About</span></a>
 
 
 </div>
@@ -68,6 +80,7 @@
     </div>
 
 </div>
+<script src="../localizations.js"></script>
 </body>
 </div>
 

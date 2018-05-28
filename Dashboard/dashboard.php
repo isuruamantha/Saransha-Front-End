@@ -21,28 +21,41 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="../bower_components/jssocials/dist/jssocials.css"/>
 <link rel="stylesheet" type="text/css" href="../bower_components/jssocials/dist/jssocials-theme-flat.css"/>
+<script src="https://unpkg.com/i18next/i18next.js"></script>
 
 <body>
 <script src="../mindmap.js"></script>
 
 <div class="sidenav">
 
-    <span><h3 style="color: white; margin-left: 12px">HI, <span id="user-name"></span></h3></span>
+    <div class="text-center">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary"
+                    onclick="i18next.changeLanguage('en'); changeAppLanguage('en')"><img
+                        src="../assets/uk_flak.jpg" width="26"/></button>
+            <button type="button" class="btn btn-primary"
+                    onclick="i18next.changeLanguage('de'); changeAppLanguage('de')"><img
+                        src="../assets/sri_lanka_flag.png" width="40"/></button>
+        </div>
+    </div>
+
+    <span><h3 style="color: white; margin-left: 12px"><span id="localization-hi">HI</span>, <span id="user-name"></span></h3></span>
     <script>
         document.getElementById('user-name').innerHTML = localStorage.getItem("userName")
     </script>
-    <a href="../Dashboard/dashboard.php">Dashboard</a>
-    <a href="../History/history.php">History</a>
-    <a href="../About/about.php">About</a>
+    <a href="../Dashboard/dashboard.php"><span id="localization-dasbhoard">Dashboard</span></a>
+    <a href="../History/history.php"><span id="localization-history">History</span></a>
+    <a href="../About/about.php"><span id="localization-about">About</span></a>
 </div>
 
 <div class="main">
     <div class="container">
         <div class="panel panel-default" style="margin-top: 20px;">
-            <div class="panel-heading clearfix">Enter your text Sinhala here
+            <div class="panel-heading clearfix"><span id="localization_enter_your_sinhala_text">Enter your text Sinhala here</span>
                 <div class="pull-right">
                     <form action="" method="post" enctype="multipart/form-data" id="isuru">
-                        <label style="display: inline-block" for="file">Upload file:</label> <input
+                        <label style="display: inline-block" for="file"><span
+                                    id="localization_upload_file">Upload file:</span></label> <input
                                 class="btn btn-primary btn"
                                 style="display: inline-block" type="file" name="file" id="file"/>
                         <input class="btn btn-primary btn" style="display: inline-block" type="submit" value="Submit">
@@ -53,17 +66,17 @@
                 <form action="" method="POST">
                     <div class="form-group">
                         <textarea class="form-control" name="data" rows="5" id="source-text">
-                                            <?php
-                                            error_reporting(E_ERROR | E_PARSE);
-                                            $fp = fopen($_FILES['file']['tmp_name'], 'rb');
-                                            while (($line = fgets($fp)) !== false) {
-                                                echo "$line";
-                                            }
-                                            fclose($fp);
-                                            ?>
+                            <?php
+                            error_reporting(E_ERROR | E_PARSE);
+                            $fp = fopen($_FILES['file']['tmp_name'], 'rb');
+                            while (($line = fgets($fp)) !== false) {
+                                echo "$line";
+                            }
+                            fclose($fp);
+                            ?>
                         </textarea>
                     </div>
-                    Number of lines in the summary
+                    <span id="localization_number_of_line_in_summary">Number of lines in the summary</span>
                     <div class="center-plus-minus"><p></p>
                         <div class="input-group">
                         <span class="input-group-btn">
@@ -79,8 +92,8 @@
                   </span></div>
                     </div>
                     <br>
+                    <span id="localization_number_of_keywords_in_the_word_cloud">Number of keywords in the word cloud</span>
 
-                    Number of keywords in the word cloud
                     <div class="center-plus-minus"><p></p>
                         <div class="input-group">
                         <span class="input-group-btn">
@@ -109,7 +122,8 @@
         <hr>
 
         <div class="panel panel-default" style="margin-top: 20px;">
-            <div class="panel-heading">Generated Sinhala Summary</div>
+            <div class="panel-heading"><span
+                        id="localization_generated_sinhala_summary">Generated Sinhala Summary</span></div>
             <div class="panel-body">
                 <form action="dashboard.php" method="POST">
                     <div class="form-group">
@@ -137,9 +151,12 @@
             <div class="panel with-nav-tabs panel-primary">
                 <div class="panel-heading">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab2primary" data-toggle="tab">Generated Mind map</a></li>
-                        <li><a href="#tab3primary" data-toggle="tab">Generated Word cloud</a></li>
-                        <li><a href="#tab4primary" data-toggle="tab">Frequent words</a></li>
+                        <li class="active"><a href="#tab2primary" data-toggle="tab"><span
+                                        id="localization_generated_mindmap">Generated Mind map</span></a></li>
+                        <li><a href="#tab3primary" data-toggle="tab"><span id="localization_geneerated_word_cloud">Generated Word cloud</span></a>
+                        </li>
+                        <li><a href="#tab4primary" data-toggle="tab"><span id="localization_frequent_words">Frequent words</span></a>
+                        </li>
                     </ul>
                 </div>
                 <div class="panel-body">
@@ -170,6 +187,7 @@
         </div>
     </div>
     <script type="text/javascript" src="../word-cloud.js"></script>
+    <script src="../dashboard_localizations.js"></script>
 </body>
 </div>
 

@@ -96,6 +96,7 @@ function update() {
         }),
         success: function (data) {
             tags = data;
+            console.log(data);
             layout.font('impact').spiral('archimedean');
             fontSize = d3.scale['sqrt']().range([1, 100]);
             if (tags.length) {
@@ -104,7 +105,7 @@ function update() {
             layout.stop().words(tags).start();
         },
         error: function (jqXhr, textStatus, errorThrown) {
-            alert("Mind map Request Failedd");
+            alert("Mind map Request Failed");
         }
     });
 
