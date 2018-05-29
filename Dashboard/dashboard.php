@@ -23,6 +23,11 @@
 <link rel="stylesheet" type="text/css" href="../bower_components/jssocials/dist/jssocials-theme-flat.css"/>
 <script src="https://unpkg.com/i18next/i18next.js"></script>
 
+
+<script src="../bower_components/word-cloud/d3.js" charset="utf-8"></script>
+<script src="../bower_components/word-cloud/d3.layout.cloud.js"></script>
+<script src="../bower_components/word-cloud/d3.wordcloud.js"></script>
+
 <body>
 <script src="../mindmap.js"></script>
 
@@ -176,6 +181,7 @@
 
                         <div class="tab-pane fade" id="tab3primary">
                             <div id="vis"></div>
+                            <div id='wordcloud'></div>
                         </div>
 
                         <div class="tab-pane fade" id="tab4primary">
@@ -186,7 +192,6 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="../word-cloud.js"></script>
     <script src="../dashboard_localizations.js"></script>
 </body>
 </div>
