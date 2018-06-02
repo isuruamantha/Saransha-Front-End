@@ -70,16 +70,14 @@
             <div class="panel-body">
                 <form action="" method="POST">
                     <div class="form-group">
-                        <textarea class="form-control" name="data" rows="5" id="source-text">
-                            <?php
+                        <textarea class="form-control" name="data" rows="5" id="source-text"><?php
                             error_reporting(E_ERROR | E_PARSE);
                             $fp = fopen($_FILES['file']['tmp_name'], 'rb');
                             while (($line = fgets($fp)) !== false) {
                                 echo "$line";
                             }
                             fclose($fp);
-                            ?>
-                        </textarea>
+                            ?></textarea>
                     </div>
                     <span id="localization_number_of_line_in_summary">Number of lines in the summary</span>
                     <div class="center-plus-minus"><p></p>
@@ -160,8 +158,7 @@
                                         id="localization_generated_mindmap">Generated Mind map</span></a></li>
                         <li><a href="#tab3primary" data-toggle="tab"><span id="localization_geneerated_word_cloud">Generated Word cloud</span></a>
                         </li>
-                        <li><a href="#tab4primary" data-toggle="tab"><span id="localization_frequent_words">Frequent words</span></a>
-                        </li>
+
                     </ul>
                 </div>
                 <div class="panel-body">
@@ -184,9 +181,6 @@
                             <div id='wordcloud'></div>
                         </div>
 
-                        <div class="tab-pane fade" id="tab4primary">
-                            <div id="barchart_material" style="width: 900px; height: 500px; margin-top: 20px"></div>
-                        </div>
                     </div>
                 </div>
             </div>

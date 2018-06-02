@@ -15,7 +15,6 @@ i18next.init({
                 "localization_generated_sinhala_summary": "Generated Sinhala summary",
                 "localization_generated_mindmap": "Generated Mind map",
                 "localization_geneerated_word_cloud": "Generated Word cloud",
-                "localization_frequent_words": "Frequent words",
             }
         },
         de: {
@@ -30,8 +29,7 @@ i18next.init({
                 "localization_number_of_keywords_in_the_word_cloud": "සාරාංශයේ තිබිය යුතු keywords ගණන ",
                 "localization_generated_sinhala_summary": "සිංහල සාරාංශය",
                 "localization_generated_mindmap": "මනෝ සිතියම",
-                "localization_geneerated_word_cloud": "Generated Word cloud",
-                "localization_frequent_words": "Frequent Words",
+                "localization_geneerated_word_cloud": "වචන වලාකුළ",
             }
         }
     }
@@ -52,7 +50,6 @@ function updateContent() {
     document.getElementById('localization_generated_sinhala_summary').innerHTML = i18next.t('localization_generated_sinhala_summary');
     document.getElementById('localization_generated_mindmap').innerHTML = i18next.t('localization_generated_mindmap');
     document.getElementById('localization_geneerated_word_cloud').innerHTML = i18next.t('localization_geneerated_word_cloud');
-    document.getElementById('localization_frequent_words').innerHTML = i18next.t('localization_frequent_words');
 
 }
 

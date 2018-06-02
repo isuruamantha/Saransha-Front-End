@@ -3,6 +3,7 @@ $(document).ready(function () {
     $("#reset-button").click(function () {
         $('#source-text').val('');
         location.reload();
+        window.location.href;
     });
 
     $("#create-mindmap").click(function (e) {
@@ -37,78 +38,6 @@ $(document).ready(function () {
                     alert("Summarization Request Failed");
                 }
             });
-
-
-            // google.charts.load('current', {'packages': ['bar']});
-            // google.charts.setOnLoadCallback(drawChart);
-
-
-            // console.log("beg");
-            // $.ajax({
-            //     url: 'http://localhost:5000/keywordsforbarchart',
-            //     type: 'post',
-            //     contentType: 'application/json',
-            //     data: JSON.stringify({
-            //         "data": $('#source-text').val(),
-            //         "sentences_count": $('#line-count').val(),
-            //         "keyword_count": $('#keyword-count').val()
-            //     }),
-            //     success: function (data) {
-            //         console.log("this is woring")
-            //         console.log(data)
-            //     },
-            //     error: function (jqXhr, textStatus, errorThrown) {
-            //         alert("Word Request Failed");
-            //     }
-            // });
-
-            // function drawChart() {
-            //
-            //     var data = google.visualization.arrayToDataTable([
-            //         ['Year', 'Sales'],
-            //         ['2014', 1000],
-            //         ['2015', 1170],
-            //         ['2016', 660],
-            //         ['2017', 1030]
-            //     ]);
-            //
-            //
-            //     var data = new google.visualization.DataTable(data);
-            //
-            //     var options = {
-            //         bars: 'vertical'
-            //     };
-            //
-            //     var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-            //     chart.draw(data, google.charts.Bar.convertOptions(options));
-            // }
-
-
-            google.charts.load('current', {packages: ['bar', 'corechart']});
-            google.charts.setOnLoadCallback(drawBasic);
-
-            function drawBasic() {
-
-                var data = google.visualization.arrayToDataTable([
-                    ['City', '2010 Population',],
-                    ['New York City, NY', 8175000],
-                    ['Los Angeles, CA', 3792000],
-                    ['Chicago, IL', 2695000],
-                    ['Houston, TX', 2099000],
-                    ['Philadelphia, PA', 1526000]
-                ]);
-
-                var options = {
-                    bars: 'vertical'
-                                };
-
-                var chart = new google.visualization.BarChart(document.getElementById('barchart_material'));
-                console.log(data);
-
-                chart.draw(data, options);
-            }
-
-
 
 
             $.ajax({
@@ -158,7 +87,6 @@ $(document).ready(function () {
             }
         });
     });
-
 
 
 
